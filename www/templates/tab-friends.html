@@ -1,8 +1,14 @@
-<ion-view title="Friends">
+<ion-view title="Magazin">
   <ion-content>
     <ion-list>
       <ion-item ng-repeat="friend in friends" type="item-text-wrap" href="#/tab/friend/{{friend.id}}">
-        {{friend.name}}
+      	<div class="product-image">
+      		<img ng-src="http://www.rosesart.ro/web_continut/poze/mici/{{friend.poza1}}" />
+      	</div>
+      	<div class="product-details">
+      		{{friend.nume_produs}} <br/>
+      		{{friend.pret_total}} RON
+      	</div>
       </ion-item>
     </ion-list>
   </ion-content>

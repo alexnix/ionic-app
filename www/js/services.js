@@ -1,26 +1,48 @@
 angular.module('starter.services', [])
 
-/**
- * A simple example service that returns some data.
- */
-.factory('Friends', function() {
-  // Might use a resource here that returns a JSON array
+.factory('Friends', function($http, $q) {
 
-  // Some fake testing data
-  var friends = [
-    { id: 0, name: 'Scruff McGruff' },
-    { id: 1, name: 'G.I. Joe' },
-    { id: 2, name: 'Miss Frizzle' },
-    { id: 3, name: 'Ash Ketchum' }
-  ];
+  var deffered = $q.defer(); // some magic 
+  var friends = [];
+  var Friends = {};
+
+  Friends.async = function() {
+    $http.get('http://rosesart.ro/webservice_produse.php').success(function(d) {
+      friends = d;
+      deffered.resolve();
+    });
+    return deffered.promise;
+  };
+  Friends.all = function() {
+    return friends;
+  };
+ 
+  Friends.get = function(id) {
+    return friends[id];
+  };
+
+  return Friends; 
+
+}).
+
+factory('Cart', function(){
+
+  var products = [];
 
   return {
-    all: function() {
-      return friends;
+    get: function() {
+      return products;
     },
-    get: function(friendId) {
-      // Simple index lookup
-      return friends[friendId];
+    add: function(product){
+      products.push(product);
+    },
+    total: function() {
+      var total = 0;
+      products.forEach(function(product){
+        total += parseInt(product.pret_total); 
+      });
+      return total;
     }
   }
 });
+ 

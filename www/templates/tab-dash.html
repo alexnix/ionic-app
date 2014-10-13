@@ -1,5 +1,16 @@
-<ion-view title="Dashboard">
-  <ion-content class="padding">
-    <h1>Dash</h1>
+<ion-view title="Cos">
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="product in cart" type="item-text-wrap">
+        <div class="product-image">
+      		<img ng-src="http://www.rosesart.ro/web_continut/poze/mici/{{product.poza1}}" />
+      	</div>
+      	<div class="product-details">
+      		{{product.nume_produs}} <br/>
+      		{{product.pret_total}} RON
+      	</div>
+      </ion-item>
+    </ion-list>
+    Cost total: {{total}} RON
   </ion-content>
 </ion-view>
