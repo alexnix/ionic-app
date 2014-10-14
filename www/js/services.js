@@ -42,6 +42,12 @@ factory('Cart', function(){
         total += parseInt(product.pret_total); 
       });
       return total;
+    },
+    cancel : function() {
+      products = [];
+    },
+    order: function() {
+      // TODO: acces websservice to place order
     }
   }
 });

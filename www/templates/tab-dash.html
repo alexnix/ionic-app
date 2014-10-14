@@ -1,7 +1,7 @@
 <ion-view title="Cos">
   <ion-content>
     <ion-list>
-      <ion-item ng-repeat="product in cart" type="item-text-wrap">
+      <ion-item ng-repeat="product in cart track by $index" type="item-text-wrap">
         <div class="product-image">
       		<img ng-src="http://www.rosesart.ro/web_continut/poze/mici/{{product.poza1}}" />
       	</div>
@@ -11,6 +11,32 @@
       	</div>
       </ion-item>
     </ion-list>
-    Cost total: {{total}} RON
+  	
+  	<div ng-show="total" class="cart-not-emprty">
+	    <p>Cost total: {{total}} RON</p>
+	    <p>Introduceti datele de contact si ve-ti fi contactat/a pentru confirmare comenzii in cel mai scurt timp.</p>
+
+	    <label class="item item-input">
+		  <span class="input-label">Numele dvs.</span>
+		  <input type="text">
+		</label>
+
+	    <label class="item item-input">
+		  <span class="input-label">Telefon</span>
+		  <input type="tel">
+		</label>
+
+		<div class="button-bar">
+		  <a class="button">Comanda</a>
+		  <a class="button" ng-click="cancel()">Anuleaza Comanda</a>
+		</div>
+	</div>
+
+	<div class="card" ng-hide="total">
+	  <div class="item item-text-wrap">
+	    Nu aveti niciun produs in cos.
+	  </div>
+	</div>
+    
   </ion-content>
 </ion-view>
