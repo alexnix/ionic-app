@@ -38,47 +38,47 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
     // Each tab has its own nav history stack:
 
-    .state('tab.dash', {
-      url: '/dash',
+    .state('tab.cart', {
+      url: '/cart',
       views: {
-        'tab-dash': {
-          templateUrl: 'templates/tab-dash.html',
-          controller: 'DashCtrl'
+        'tab-cart': {
+          templateUrl: 'templates/tab-cart.html',
+          controller: 'CartCtrl'
         }
       }
     })
 
-    .state('tab.friends', {
-      url: '/friends',
+    .state('tab.shop', {
+      url: '/shop',
       views: {
-        'tab-friends': {
-          templateUrl: 'templates/tab-friends.html',
-          controller: 'FriendsCtrl'
+        'tab-shop': {
+          templateUrl: 'templates/tab-shop.html',
+          controller: 'ShopCtrl'
         }
       }
     })
-    .state('tab.friend-detail', {
-      url: '/friend/:friendId',
+    .state('tab.product-detail', {
+      url: '/product/:productId',
       views: {
-        'tab-friends': {
-          templateUrl: 'templates/friend-detail.html',
-          controller: 'FriendDetailCtrl'
+        'tab-shop': {
+          templateUrl: 'templates/product-detail.html',
+          controller: 'ProductDetailCtrl'
         }
       }
     })
 
     .state('tab.account', {
-      url: '/account',
+      url: '/contact',
       views: {
         'tab-account': {
-          templateUrl: 'templates/tab-account.html',
-          controller: 'AccountCtrl'
+          templateUrl: 'templates/tab-contact.html',
+          controller: 'ContactCtrl'
         }
       }
     });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/friends');
+  $urlRouterProvider.otherwise('/tab/shop');
 
 });
 

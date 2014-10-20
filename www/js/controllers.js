@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('DashCtrl', function($scope, Cart) {
+.controller('CartCtrl', function($scope, Cart) {
   $scope.cart = Cart.get();
   $scope.total = Cart.total();
   $scope.cancel = function() {
@@ -13,19 +13,19 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('FriendsCtrl', function($scope, Friends) {
+.controller('ShopCtrl', function($scope, Friends) {
   Friends.async().then(function(){
-  	$scope.friends = Friends.all();
+  	$scope.products = Friends.all();
   });
 })
 
-.controller('FriendDetailCtrl', function($scope, $stateParams, Friends, Cart) {
-  $scope.friend = Friends.get($stateParams.friendId);
+.controller('ProductDetailCtrl', function($scope, $stateParams, Friends, Cart) {
+  $scope.product = Friends.get($stateParams.productId);
 
   $scope.addToCart = function() {
-  	Cart.add($scope.friend);
+  	Cart.add($scope.product);
   };
 })
 
-.controller('AccountCtrl', function($scope) {
+.controller('ContactCtrl', function($scope) {
 });

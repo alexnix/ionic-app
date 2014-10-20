@@ -1,0 +1,19 @@
+<ion-view title="Magazin">
+  <ion-content>
+    
+    <div class="list" ng-show="products" >
+	    <a ng-repeat="product in products" class="item item-thumbnail-left" href="#/tab/product/{{product.id}}">
+	      <img ng-src="http://www.rosesart.ro/web_continut/poze/mici/{{product.poza1}}" />
+	      <h2>{{product.nume_produs}}</h2>
+	      <p>{{product.pret_total}} RON</p>
+	    </a>
+	</div>
+
+	<div class="card" ng-hide="products">
+	  <div class="item item-text-wrap">
+	    Se preiau datele de pe internet...
+	  </div>
+	</div>
+  
+  </ion-content>
+</ion-view>
