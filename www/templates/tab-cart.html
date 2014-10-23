@@ -13,28 +13,28 @@
     </ion-list>
   	
   	<div ng-show="total" class="cart-not-emprty">
-	    <p>Cost total: {{total}} RON</p>
-	    <p>Introduceti datele de contact si ve-ti fi contactat/a pentru confirmare comenzii in cel mai scurt timp.</p>
+	    <p>Total cost: {{total}} RON</p>
+	    <p>Fill your contact details and you will be contacted to confirm the order.</p>
 
 	    <label class="item item-input">
-		  <span class="input-label">Numele dvs.</span>
+		  <span class="input-label">Name</span>
 		  <input type="text">
 		</label>
 
 	    <label class="item item-input">
-		  <span class="input-label">Telefon</span>
+		  <span class="input-label">Phone</span>
 		  <input type="tel">
 		</label>
 
 		<div class="button-bar">
-		  <a class="button">Comanda</a>
-		  <a class="button" ng-click="cancel()">Anuleaza Comanda</a>
+		  <a class="button">Place order</a>
+		  <a class="button" ng-click="cancel()">Cancel order</a>
 		</div>
 	</div>
 
 	<div class="card" ng-hide="total">
 	  <div class="item item-text-wrap">
-	    Nu aveti niciun produs in cos.
+	   There is no product in your cart. You can add products useing the shop tab.
 	  </div>
 	</div>
     
