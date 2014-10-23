@@ -1,0 +1,8 @@
+/* Empty. Add your own CSS if you like */
+.product-image {
+	float:left;
+	width: 100px;
+	height: 100px;
+	margin-right: 20px;
+	overflow: hidden;
+}
